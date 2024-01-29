@@ -6,18 +6,8 @@ import org.springframework.stereotype.Service;
 public class ExceptionHandlerImp implements ExceptionHandler {
 
     @Override
-    public boolean matchInteger(String a, String b) {
-        return a.matches("\\d+") && b.matches("\\d+");
-    }
-
-    @Override
-    public String noMatchInteger() {
-        return "Введеные параметры не являются числом!";
-    }
-
-    @Override
-    public boolean matchZero(String a) {
-        return Integer.parseInt(a) != 0;
+    public boolean matchZero(int a) {
+        return a != 0;
     }
 
     @Override
@@ -26,7 +16,7 @@ public class ExceptionHandlerImp implements ExceptionHandler {
     }
 
     @Override
-    public boolean matchNotNull(String a) {
+    public boolean matchNotNull(Object a) {
         return a != null;
     }
 
